@@ -5,4 +5,7 @@ require('../scss/style.scss');
 
 $(window).on('load', ()=>{
     $('body').addClass('hasloaded')
+    setTimeout(()=>{
+    $('.banner-content').addClass('active')
+    },1500)
 });
