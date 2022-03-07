@@ -9,3 +9,11 @@ $(window).on('load', ()=>{
     $('.banner-content').addClass('active')
     },1500)
 });
+
+$('#menu-button').on('click touch', ()=> {
+    if ($('header').hasClass('menu-open')) {
+        $('header').removeClass('menu-open')
+    } else {
+        $('header').addClass('menu-open')
+    }
+})

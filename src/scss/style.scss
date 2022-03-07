@@ -122,3 +122,102 @@ $transitionSlow: all 1.5s ease;
         }
     }
 }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 8;
+    .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        .header-left {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            a {
+                color: #000;
+            }
+        }
+    }
+    .menu-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        pointer-events: none;
+        align-items: center;
+        justify-content: center;
+        .menu-col {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            width: 33.333333%;
+            flex-flow: column;
+            transition: $transition;
+            background-color: black;
+            line-height: 2;
+            ul  {
+                margin-top: 20px;
+            }
+            &:nth-child(1),
+            &:nth-child(3) {
+                transform: translateY(100%);
+            }
+            &:nth-child(2){
+                transform: translateY(-100%);
+            }
+            * {
+                color: white;
+            }
+            padding: 5%;
+            &:hover {
+                background-color: $darkGreen;
+                * {
+                    color: $highlight;
+                }
+            }
+        }
+    }
+    &.menu-open {
+        .menu-wrapper {
+            pointer-events: auto;
+            .menu-col {
+                transform: translateY(0);
+                border-right: .5px solid #fff;
+                &:nth-child(3){
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+.button {
+    position: relative;
+    color: $darkGrey;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        width: 0;
+        transition: $transition;
+        background-color: currentColor;
+    }
+    &:hover {
+        color: $darkGrey;
+        &::before {
+            width: 100%;
+        }
+    }
+}
