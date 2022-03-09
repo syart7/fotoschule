@@ -71,7 +71,6 @@ $transitionSlow: all 1.5s ease;
             padding: 60px;
         }
         .banner-top,
-        ,
         .banner-bottom {
             transition: $transition;
             height: 50%;
@@ -86,7 +85,7 @@ $transitionSlow: all 1.5s ease;
         .banner-bottom {
             padding-top: 10px;
             transition: $transition;
-            h3{
+            h3 {
                 font-size: 30px;
                 margin-bottom: 10px;
             }
@@ -115,7 +114,7 @@ $transitionSlow: all 1.5s ease;
         }
     }
     &.dark {
-        .banner-image{
+        .banner-image {
             &::before {
                 border-color: $darkGrey;
             }
@@ -165,14 +164,14 @@ header {
             transition: $transition;
             background-color: black;
             line-height: 2;
-            ul  {
+            ul {
                 margin-top: 20px;
             }
             &:nth-child(1),
             &:nth-child(3) {
                 transform: translateY(100%);
             }
-            &:nth-child(2){
+            &:nth-child(2) {
                 transform: translateY(-100%);
             }
             * {
@@ -192,8 +191,8 @@ header {
             pointer-events: auto;
             .menu-col {
                 transform: translateY(0);
-                border-right: .5px solid #fff;
-                &:nth-child(3){
+                border-right: 0.5px solid #fff;
+                &:nth-child(3) {
                     border: none;
                 }
             }
@@ -205,7 +204,7 @@ header {
     position: relative;
     color: $darkGrey;
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -5px;
         left: 0;
