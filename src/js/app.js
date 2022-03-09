@@ -17,3 +17,8 @@ $('#menu-button').on('click touch', ()=> {
         $('header').addClass('menu-open')
     }
 })
+$('.slick-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  }); 

@@ -11,23 +11,35 @@ $transitionSlow: all 1.5s ease;
 h1 {
     font-size: 48px;
     font-weight: bold;
+    line-height: 1.6;
 }
 h2 {
     font-size: 30px;
     font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
 }
 h3 {
     font-size: 24px;
     font-weight: bold;
+    line-height: 1.6;
 }
 h4 {
     font-size: 22px;
+    line-height: 1.6;
 }
 h5 {
     font-size: 20px;
+    line-height: 1.6;
 }
 h6 {
     font-size: 16px;
+    line-height: 1.6;
+}
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .hasloaded {
@@ -247,3 +259,95 @@ header {
         }
     }
 }
+
+.megaText {
+    position: relative;
+    min-height: 100vh;
+    background-color: $darkGreen;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 80px;
+    overflow: hidden;
+    h1 {
+        position: absolute;
+        color: $highlight;
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11vw;
+        transform: rotate(-20deg);
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    a {
+        color: #fff;
+    }
+}
+
+.slider {
+    padding: 80px 0;
+    overflow: hidden;
+    .slick-slider {
+      .slick-arrow {
+        position: absolute;
+        top: -75px;
+        left: 33%;
+        font-size: 0;
+        background: none;
+        border: none;
+        &::before {
+          content: "\f177";
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: 30px;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+        &.slick-next {
+          margin-left: 60px;
+          &::before {
+            content: "\f178";
+          }
+        }
+      }
+      .slider-item {
+        &.slick-current {
+          .image-wrapper {
+            padding-top: 0;
+          }
+          .slider-item-content {
+            opacity: 1;
+          }
+        }
+        display: block;
+        .slider-item-content {
+          opacity: 0;
+          transition: $transition;
+        }
+        .image-wrapper {
+          max-width: 450px;
+          margin-right: 60px;
+          height: 550px;
+          margin-bottom: 30px;
+          padding-top: 120px;
+          transition: $transition;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: $transition;
+        }
+      }
+      .slick-list {
+        overflow: visible;
+      }
+    }
+  }
