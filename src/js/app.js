@@ -14,7 +14,7 @@ $(window).on('load', ()=>{
     $('body').addClass('hasloaded')
     setTimeout(()=>{
     $('.img-wrapper').addClass('active')
-    },1100)
+    },1000)
 });
 $(window).on('load', ()=>{
     $('body').addClass('hasloaded')
