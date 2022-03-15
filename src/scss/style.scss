@@ -184,9 +184,8 @@ header {
             display: block;
         }
         &.dark-header {
-            *{
+            * {
                 color: #fff;
-                
             }
         }
         align-items: center;
@@ -320,121 +319,157 @@ header {
     }
 
     .slick-slider {
-      .slick-arrow {
-        position: absolute;
-        top: -75px;
-        left: 33%;
-        font-size: 0;
-        background: none;
-        border: none;
-        &::before {
-          content: "\f177";
-          display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: 30px;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
+        .slick-arrow {
+            position: absolute;
+            top: -75px;
+            left: 33%;
+            font-size: 0;
+            background: none;
+            border: none;
+            &::before {
+                content: "\f177";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 30px;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+            }
+            &.slick-next {
+                margin-left: 60px;
+                &::before {
+                    content: "\f178";
+                }
+            }
         }
-        &.slick-next {
-          margin-left: 60px;
-          &::before {
-            content: "\f178";
-          }
+        .slider-item {
+            opacity: 0.4;
+            &.slick-active {
+                opacity: 1;
+            }
+            &.slick-current {
+                .image-wrapper {
+                    padding-top: 0;
+                }
+                .slider-item-content {
+                    opacity: 1;
+                }
+            }
+            display: block;
+            h2 {
+                color: #000;
+            }
+            .slider-item-content {
+                opacity: 0;
+                transition: $transition;
+                color: #000;
+                p {
+                    margin-bottom: 20px;
+                }
+                span {
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .image-wrapper {
+                max-width: 450px;
+                margin-right: 60px;
+                height: 550px;
+                margin-bottom: 30px;
+                padding-top: 120px;
+                transition: $transition;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: $transition;
+            }
         }
-      }
-      .slider-item {
-          opacity: 0.4;
-          &.slick-active {
-              opacity: 1;
-          }
-        &.slick-current {
-          .image-wrapper {
-            padding-top: 0;
-          }
-          .slider-item-content {
-            opacity: 1;
-        
-          }
+        .slick-list {
+            overflow: visible;
         }
-        display: block;
-        h2 {
-            color: #000;
-        }
-        .slider-item-content {
-          opacity: 0;
-          transition: $transition;
-          color: #000;
-          p {
-              margin-bottom: 20px;
-          }
-          span {
-              i {
-                  margin-right: 10px;
-              }
-          }
-        }
-        .image-wrapper {
-          max-width: 450px;
-          margin-right: 60px;
-          height: 550px;
-          margin-bottom: 30px;
-          padding-top: 120px;
-          transition: $transition;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: $transition;
-        }
-      }
-      .slick-list {
-        overflow: visible;
-      }
     }
-  }
+}
 
-  .overview {
-      .overview-wrapper {
-          display: flex;
-          .overview-item {
-              position: relative;
-              width: 33.333333%;
-              background-color: $darkGrey;
-              height: 700px;
-              * {
-                  color: #fff;
-              }
-              &:hover {
-                  img {
+.overview {
+    .overview-wrapper {
+        display: flex;
+        .overview-item {
+            position: relative;
+            width: 33.333333%;
+            background-color: $darkGrey;
+            height: 700px;
+            * {
+                color: #fff;
+            }
+            &:hover {
+                img {
                     opacity: 0.6;
-
-                  }
-                  .overview-content {
-                      .hover-up{
-                          height: 35px;
-                      }
-                  }
-              }
-              img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  opacity: 0.8;
-                  transition: $transition;
-              }
-              .overview-content {
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  padding: 40px;
-                  .hover-up {
+                }
+                .overview-content {
+                    .hover-up {
+                        height: 35px;
+                    }
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.8;
+                transition: $transition;
+            }
+            .overview-content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 40px;
+                .hover-up {
                     height: 0;
                     display: block;
                     overflow: hidden;
                     transition: $transition;
-                  }
-              }
-          }
-      }
-  }
+                }
+            }
+        }
+    }
+}
+
+.overview-photo-info {
+    padding: 100px 0;
+
+    .img-wrapper {
+        opacity: 0;
+        transition: $transitionSlow;
+        &.active {
+            opacity: 1;
+        }
+        img {
+            width:90%;
+            height: 100%;
+        }
+    }
+    .right-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: $transitionSlow;
+        margin-left: 50px;
+
+        &.active {
+            opacity: 1;
+            margin: 0;
+        }
+        .content-wrapper {
+            margin-left: 60px;
+            h1 {
+                font-weight: normal;
+                line-height: 1.3;
+            }
+        }
+    }
+
+}
+

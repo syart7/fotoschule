@@ -10,6 +10,19 @@ $(window).on('load', ()=>{
     },1500)
 });
 
+$(window).on('load', ()=>{
+    $('body').addClass('hasloaded')
+    setTimeout(()=>{
+    $('.img-wrapper').addClass('active')
+    },1100)
+});
+$(window).on('load', ()=>{
+    $('body').addClass('hasloaded')
+    setTimeout(()=>{
+    $('.right-content').addClass('active')
+    },1500)
+});
+
 $('#menu-button').on('click touch', ()=> {
     if ($('header').hasClass('menu-open')) {
         $('header').removeClass('menu-open')
