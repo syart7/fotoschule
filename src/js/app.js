@@ -52,4 +52,10 @@ $('.accordeon-header').on('click touch', (e) => {
     }
 })
 
+$('.gallery-list .col-lg-4').each((nr,el)=>{
+    const index = nr%3 * 0.3
+$(el).addClass('wow fadeInUp').attr('data-wow-delay',index+'s')
+})
+
+
 new WOW().init();

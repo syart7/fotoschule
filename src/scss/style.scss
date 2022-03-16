@@ -564,3 +564,52 @@ header {
         margin-bottom: 40px;
     }
 }
+
+.my-xs-80 {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.gallery-list {
+    .col-lg-4:nth-child(3n-1) {
+       position: relative;
+       top: 40px;
+    }
+    .col-lg-4:nth-child(6n+2) {
+       position: relative;
+       top: -40px;
+    }
+    .gallery-item {
+        display: block;
+        margin-bottom: 120px;
+        &:hover {
+            span {
+                top: 0;
+                opacity: 1;
+            }
+            .img-wrapper {
+                img {
+                    opacity: .7;
+                }
+            }
+        }
+        span {
+            position: relative;
+            top: 30px;
+            opacity: 0;
+            transition: $transition;
+        }
+        .img-wrapper {
+            background: #000;
+            height: 550px;
+            width: 100%;
+            margin-bottom: 20px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: $transition;
+            }
+        }
+    }
+}
