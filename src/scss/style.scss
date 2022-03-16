@@ -438,7 +438,9 @@ header {
 
 .overview-photo-info {
     padding: 50px 0;
-
+    .banner-scrolldown {
+        margin-top: 60px;
+    }
     .img-wrapper {
         opacity: 0;
         transition: $transitionSlow;
