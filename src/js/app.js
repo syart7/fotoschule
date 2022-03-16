@@ -3,27 +3,27 @@ require('../scss/style.scss');
 
 /********** Paste your code here! ************/
 
-$(window).on('load', ()=>{
+$(window).on('load', () => {
     $('body').addClass('hasloaded')
-    setTimeout(()=>{
-    $('.banner-content').addClass('active')
-    },1500)
+    setTimeout(() => {
+        $('.banner-content').addClass('active')
+    }, 1500)
 });
 
-$(window).on('load', ()=>{
+$(window).on('load', () => {
     $('body').addClass('hasloaded')
-    setTimeout(()=>{
-    $('.img-wrapper').addClass('active')
-    },1000)
+    setTimeout(() => {
+        $('.img-wrapper').addClass('active')
+    }, 1000)
 });
-$(window).on('load', ()=>{
+$(window).on('load', () => {
     $('body').addClass('hasloaded')
-    setTimeout(()=>{
-    $('.right-content').addClass('active')
-    },1500)
+    setTimeout(() => {
+        $('.right-content').addClass('active')
+    }, 1500)
 });
 
-$('#menu-button').on('click touch', ()=> {
+$('#menu-button').on('click touch', () => {
     if ($('header').hasClass('menu-open')) {
         $('header').removeClass('menu-open')
     } else {
@@ -34,6 +34,20 @@ $('.slick-slider').slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1
-  }); 
+});
 
-  $('.header-wrapper').clipthru()
+$('.header-wrapper').clipthru()
+
+$('.accordeon-header').on('click touch', (e) => {
+    const parent = $(e.currentTarget).parent()
+    const content = parent.find('.accordeon-content')
+    //       $('.accordeon-item').removeClass('active')
+    //       $('.accordeon-content').slideUp()
+    if (parent.hasClass('active')) {
+        parent.removeClass('active')
+        content.slideUp()
+    } else {
+        parent.addClass('active')
+        content.slideDown()
+    }
+})
