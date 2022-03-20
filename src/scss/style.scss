@@ -614,3 +614,65 @@ header {
         }
     }
 }
+
+footer {
+    padding: 100px 0;
+    background-color: #191919;
+}
+.footer {
+    img {
+        margin-bottom: 50px;
+    }
+    .middle-content {
+        color: #fff;
+        ul {
+            margin-bottom: 20px;
+            li {
+                line-height: 1.8;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .left-content {
+        p {
+            color: #fff;
+            margin-bottom: 30px;
+            padding-right: 55%;
+            a {
+                color: #fff;
+            }
+        }
+    }
+   .sub-form {
+       padding-top: 40px;
+       h3 {
+           color: #fff;
+           margin-bottom: 20px;
+       }
+    form {
+        .form-control {
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #FFFFFF;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        label {
+            font-size: 20px;
+            color: #FFFFFF;
+            opacity: .6;
+        }
+        .sub-btn {
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            i {
+                margin-right: 20px;
+            }
+        }
+    }
+   }
+}
