@@ -1,3 +1,4 @@
+@import "helper.scss";
 $red: #ff5151;
 $grey: #d8d8d8;
 $darkGrey: #191919;
@@ -565,10 +566,6 @@ header {
     }
 }
 
-.my-xs-80 {
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
 
 .gallery-list {
     .col-lg-4:nth-child(3n-1) {
@@ -675,4 +672,123 @@ footer {
         }
     }
    }
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+    input {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        border-bottom: 1px solid $darkGrey;
+        padding: 30px 0 20px;
+        width: 100%;
+        transition: $transition;
+        &:not(:placeholder-shown) + label,
+        &:focus + label {
+            transform: translate(0,-50%) scale(0.7);
+            top: 0; 
+        }
+        &:focus ~ span {
+            width: 100%;
+            left: 0;
+        }
+        &:hover {
+            background-color: rgba(0,0,0,0.04);
+
+        }
+        &:active {
+            background-color: rgba(0,0,0,0.07);
+        }
+    }
+    span {
+        display: block;
+        width: 0%;
+        height: 2px;
+        background-color: $darkGrey;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transition: $transition;
+    }
+    label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0,-50%);
+        transition: $transition;
+        transform-origin: top left;
+    }
+}
+
+.radio-wrapper {
+    margin-bottom: 30px;
+    display: inline-block;
+    margin-right: 20px;
+    input {
+    position: absolute;
+    opacity: 0;
+    &:checked ~ label {
+        &::after{
+            width: 10px;
+            height: 10px;
+            left: 5px;
+
+        }
+    }
+    }
+    label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        min-height: 20px;
+        display: flex;
+        align-items: center;
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            border-radius: 100%;
+            transform: translate(0 ,-50%);
+            left: 0;
+            border: 1px solid $darkGrey;
+        }
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            border-radius: 100%;
+            transform: translate(0 ,-50%);
+            background-color:$darkGrey; 
+            transition: $transition;
+        }
+    }
+}
+
+.select-wrapper {
+    position: relative;
+    label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0,-50%) scale(0.7);
+        transition: $transition;
+        transform-origin: top left;
+        top: 0;
+        transform: translate(0,0) scale(0.7);
+    }
+    select {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        border-bottom: 1px solid $darkGrey;
+        padding: 30px 0 20px;
+        width: 100%;
+    }
 }
