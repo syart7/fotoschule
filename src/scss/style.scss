@@ -23,6 +23,13 @@ $transitionSlow: all 1.5s ease;
     background-color: $darkGrey;
     color: #fff;
 }
+.bg-light-grey {
+    background-color: $lightGrey;
+    color: $darkGrey;
+    label {
+        color: $darkGreen;
+    }
+}
 h1 {
     font-size: 48px;
     font-weight: bold;
@@ -731,9 +738,8 @@ footer {
     opacity: 0;
     &:checked ~ label {
         &::after{
-            width: 10px;
-            height: 10px;
-            left: 5px;
+        color: #fff;
+        background-color: $darkGreen;
 
         }
     }
@@ -757,22 +763,35 @@ footer {
             border: 1px solid $darkGrey;
         }
         &::after {
-            content: '';
-            width: 0;
-            height: 0;
+            content: '\f00c';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font: normal normal normal 14px/1 FontAwesome;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 20px;
+            height: 20px;
             position: absolute;
-            top: 50%;
-            left: 10px;
+            top: 0;
+            left: 0;
             border-radius: 100%;
-            transform: translate(0 ,-50%);
-            background-color:$darkGrey; 
-            transition: $transition;
+            background-color:$darkGreen; 
+            color: #fff;
+        }
+        &:hover {
+        &::after {
+            color:$darkGreen;
+        }
         }
     }
 }
 
-.select-wrapper {
+.other-wrapper {
     position: relative;
+    margin-bottom: 40px;
     label {
         position: absolute;
         top: 50%;
@@ -790,5 +809,47 @@ footer {
         border-bottom: 1px solid $darkGrey;
         padding: 30px 0 20px;
         width: 100%;
+    }
+    textarea {
+        height: 100px;
+        width: 100%;
+        max-height: 200px;
+        min-height: 50px;
+        border: 1px solid $darkGrey;
+        background-color: transparent;
+        outline: none;
+        margin-top: 20px;
+        padding: 20px;
+    }
+}
+.button-form {
+    width: 100%;
+    border: none;
+    padding: 20px 30px;
+    color: #fff;
+    position: relative;
+    .button {
+        bottom: 0;
+        background-color: #fff;
+        z-index: 2;
+        color: #fff;
+    }
+    &::after {
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background-color: $darkGreen;
+    }
+    span {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+    }
+    &:hover::after {
+        opacity: 0.8;
+        transition: $transitionSlow; 
     }
 }
