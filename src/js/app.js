@@ -52,10 +52,21 @@ $('.accordeon-header').on('click touch', (e) => {
     }
 })
 
-$('.gallery-list .col-lg-4').each((nr,el)=>{
-    const index = nr%3 * 0.3
-$(el).addClass('wow fadeInUp').attr('data-wow-delay',index+'s')
+$('.gallery-list .col-lg-4').each((nr, el) => {
+    const index = nr % 3 * 0.3
+    $(el).addClass('wow fadeInUp').attr('data-wow-delay', index + 's')
 })
 
 
 new WOW().init();
+
+$('.button-form').on('click touch', (e) => {
+    e.preventDefault()
+    $('form input').each((i, e) => {
+        const value = $(e).val()
+        if (value.length === 0) {
+            $('.button-wrapper').addClass('error')
+        }
+
+    })
+})

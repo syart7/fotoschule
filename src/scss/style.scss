@@ -775,11 +775,13 @@ footer {
             width: 20px;
             height: 20px;
             position: absolute;
-            top: 0;
+            transform: translate(0, -50%);
+            transition: $transition;
+            top: 50%;
             left: 0;
             border-radius: 100%;
-            background-color:$darkGreen; 
-            color: #fff;
+            color: transparent;
+            background-color: transparent;
         }
         &:hover {
         &::after {
@@ -796,9 +798,6 @@ footer {
         position: absolute;
         top: 50%;
         left: 0;
-        transform: translate(0,-50%) scale(0.7);
-        transition: $transition;
-        transform-origin: top left;
         top: 0;
         transform: translate(0,0) scale(0.7);
     }
@@ -822,6 +821,21 @@ footer {
         padding: 20px;
     }
 }
+.button-wrapper{
+    p{
+      color:$red;
+      display: none;
+    }
+    &.error{
+      .button-form::after{
+        background-color: $red;
+      }
+      p{
+        display: block;
+  
+      }
+    }
+  }
 .button-form {
     width: 100%;
     border: none;
