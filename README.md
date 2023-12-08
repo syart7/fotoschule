@@ -1,5 +1,3 @@
-# <p align="center">HTML5-boilerplate </p>
-
 ### Required first
 
 - <a href="https://nodejs.org/en/download/">Download and Install Node.js</a>
